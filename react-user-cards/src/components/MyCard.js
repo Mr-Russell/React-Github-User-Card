@@ -9,6 +9,7 @@ function MyCard (props){
                 <p>Profile: <a href={props.data.html_url}>{props.data.html_url}</a></p>
                 <p>Followers: {props.data.followers}</p>
                 <p>Following: {props.data.following}</p>
+                <p>Repositories: {props.data.public_repos}</p>
             </div>
         </div>
     )

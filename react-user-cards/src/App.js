@@ -44,7 +44,7 @@ class App extends React.Component {
           <MyCard data={this.state.userData} />
         </div>
         <div className='followers'>
-          <h3>My GitHub Profile</h3>
+          <h3>My GitHub Followers</h3>
           {
             this.state.followers.map(item => <FollowersCard data={item}/>)
           }
