@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios'
-import UserCard from './components/UserCard.js'
-
-
-
+import MyCard from './components/MyCard.js'
+import FollowersCard from './components/FollowersCard.js'
 
 
 class App extends React.Component {
@@ -26,7 +24,7 @@ class App extends React.Component {
       .catch(err => console.log(err));
       console.log(this.state.userData)
   
-      axios
+    axios
       .get("https://api.github.com/users/mr-russell/followers")
       .then(res => {
         console.log(res)
@@ -41,14 +39,16 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <UserCard data={this.state.userData} />
-        
-        {/* {
-          this.state.followers.map(item =>{
-            <UserCard data={item}/>
-          })
-        } */}
-
+        <div className='me'>
+          <h1>My GitHub Profile</h1>
+          <MyCard data={this.state.userData} />
+        </div>
+        <div className='followers'>
+          <h3>My GitHub Profile</h3>
+          {
+            this.state.followers.map(item => <FollowersCard data={item}/>)
+          }
+        </div>
       </div>
     );
   }
